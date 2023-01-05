@@ -1,13 +1,35 @@
 ---
 layout: post
-title: post-sample
+title: HTML 기본 정의 및 구조
 date: 2020-01-02 19:20:23 +0900
-category: sample
+category: HTML
 ---
-# post-sample
-> Hello!
+# HTML : HyperText Markup Language
+* 정의
 
-This is code
-```ruby
-print 'hello world'
-```
+    웹페이지 개발자가 사용자에게 보여주고 싶은 컨텐츠를 브라우저가 읽을 수 있도록 만들어놓은 문서
+
+* 구조
+    ```html
+    <!-- 
+        DOCTYPE을 선언함으로써 최신 html을 문서라는걸 브라우저에게 알려줌
+
+        선언하지 않은 경우 : 읽고 있는 html버전이 어떤 것인지 몰라
+        스타일 같은 부분을 자기 마음대로 렌더링 하기에 의도치 않은
+        동작을 함
+    -->
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <!-- 
+                BODY태그를 읽기 이전에 알아야 할 정보,
+                HTML 파일의 기본적인 정보
+             -->
+        </head>
+        <body>
+            <!-- 
+                사용자에게 보여주고 싶은 컨텐츠
+            -->
+        </body>
+    </html>
+    ```
