@@ -1,0 +1,70 @@
+---
+layout: post
+title: id, class 속성
+date: 2023-01-06 11:29:23 +0900
+category: HTML
+---
+# HTML
+
+* id 속성
+
+    id는 여러개를 쓰더라도 정상적으로 쓰이는 것처럼 보이나 고유한 값이므로 선언한 아이디 값은 한번만 사용하도록 해야함
+
+    옳은 예시
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+        </head>
+        <body>
+            <p id="heading">
+                내용1
+            </p>
+
+            <p id="title">
+                내용2
+            </p>
+        </body>
+    </html>
+    ```
+
+    잘못된 예시
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+        </head>
+        <body>
+            <p id="heading">
+                내용1
+            </p>
+
+            <p id="heading">
+                내용2
+            </p>
+        </body>
+    </html>
+    ```
+
+* class 속성
+
+    id와 다르게 여러번 사용해도 상관없는 속성
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+        </head>
+        <body>
+            <!-- 여러번 사용 가능 -->
+            <p class="heading">
+                내용1
+            </p>
+
+            <!-- 여러개 사용 가능 -->
+            <p class="heading">
+                내용2
+            </p>
+        </body>
+    </html>
+    ```
