@@ -1,0 +1,46 @@
+---
+layout: post
+title: px, em, rem
+date: 2023-01-06 15:29:23 +0900
+category: CSS
+---
+# CSS
+
+## px, em, rem
+
+일반적으로<br>
+16px = 1em = 1rem 을 의미한다
+
+> html은 일반적으로 기본값이 16px로 되어있다
+
+**1. px**
+
+컴퓨터에서 사용하는 해상도 단위
+
+**2. em**
+
+부모태그에게 font-size 속성이 있으면, 그속성을 1em으로 계산한다.
+
+```html
+    <!-- 예시로 나온 각각의 클래스명 순서대로 css font-size 값을 16px, 1em, 1rem으로 넣어준다 -->
+
+    <!-- 부모인 container에 font-size가 있을 경우 -->
+    <div class="container" style="font-size: 40px;">
+        <p class="px">px</p>
+        <!-- em만 부모와 같은 값인 40px로 바뀐다 -->
+        <p class="em">em</p>
+        <p class="rem">rem</p>
+    </div>
+```
+
+**3. rem**
+
+html font-size 기본값을 1rem으로 측정한다<br>
+예를 들어,<br>
+html이 기본값이 16px이라 위에 언급을 하였는데,
+그러면 **16px = 1rem** 이 된다
+
+* 최근 rem을 많이 사용하는 이유
+
+    사용자 배율에 맞춰서 반응하여 같이 변화하기 때문<br>
+    테스트는 크롬 설정에 들어가 모양에서 글꼴 크기를 조절해 보면 px, em, rem중 rem만 변한다는걸 알 수 있다
