@@ -1,0 +1,56 @@
+---
+layout: post
+title: CSS 선언방법 및 우선순위
+date: 2023-01-06 10:31:23 +0900
+category: CSS
+---
+# CSS
+* 정의
+
+    HTML을 꾸며주는 역할
+
+* style태그 선언 부위
+    
+    > + head 안에 선언해야함
+    > + 태그 뒤에 스타일 선언할시 처음 렌더링때 스타일이 안먹다가 나중에 먹는 현상이 생길 수 있음
+
+    내부에서 선언방법
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <!-- style태그 선언! -->
+            <!-- body태그 이전에 필요한 정보는 head안에 선언 -->
+            <style>
+                <!-- id style 적용 방법 -->
+                #p {}
+                <!-- class style 적용 방법 -->
+                .p {}
+                <!-- tag style 적용 방법 -->
+                p {}
+            </style>
+        </head>
+        <body>
+
+        </body>
+    </html>
+    ```
+
+    외부선언 방법
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="파일명.css">;
+        </head>
+        <body>
+
+        </body>
+    </html>
+    ```
+
+* style 우선순위
+    1. Inline Style
+    2. id
+    3. class
+    4. tag
