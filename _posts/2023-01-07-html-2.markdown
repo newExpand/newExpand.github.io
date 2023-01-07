@@ -1,0 +1,32 @@
+---
+layout: post
+title: input 태그 hidden 속성
+date: 2023-01-07 22:00:23 +0900
+category: HTML
+---
+# HTML
+
+## input 태그 hidden 속성
+
+    hidden 속성을 사용하면 안보이게 data를 같이 전달 해줄 수 있음
+
+
+* 예시와 같이 get으로 같이 정보를 넘겨 줄때 hidden으로 top_search, bottom_search로 value를 주어 위치의 분기를 줄 수도 있다
+
+    예시
+    ```html
+        <form action="./result.html" method="get">
+            <input type="text" name="text">
+            <input type="hidden" name="where" value="top_search">
+            <input type="submit" value="제출">
+        </form>
+
+        <!-- 대략 긴글 ~~~~ -->
+
+
+        <form action="./result.html" method="get">
+            <input type="text" name="text">
+            <input type="hidden" name="where" value="bottom_search">
+            <input type="submit" value="제출">
+        </form>
+    ```
