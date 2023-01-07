@@ -39,7 +39,7 @@ form 태그에는 필수적으로 action과 method 속성을 가져야 한다
 
 ---
 **get :** <br>
-<kbd><img src="https://user-images.githubusercontent.com/120312998/211142182-d597cfa1-6a7f-4b57-8611-75f5764990a0.PNG" alt="urlGet"></kbd><br>
+<kbd><img src="https://user-images.githubusercontent.com/120312998/211142182-d597cfa1-6a7f-4b57-8611-75f5764990a0.PNG" alt="urlGet" style="border: 1px solid black;"></kbd><br>
 위와 같이 url에 submit한 input의 name값과 input의 사용자가 입력한 값이 노출됨
 
 
