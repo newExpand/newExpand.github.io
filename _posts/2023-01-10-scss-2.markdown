@@ -1,0 +1,70 @@
+---
+layout: post
+title: SCSS 확장(extend)으로 CSS 템플릿 구성
+date: 2023-01-10 11:50:23 +0900
+category: SCSS
+---
+# CSS
+## SCSS 확장(extend)으로 CSS 템플릿 구성
+
+### 개념
+* **extend : css 스타일 확장**
+* **% : 임시 클래스**
+
+예시
+
+**html**
+```html
+    <button class="btn-1">버튼</button>
+    <button class="btn-2">버튼</button>
+```
+
+**scss**
+```scss
+// 공통으로 들어갈 만한 css를 정의, 실제 css에는 보이지 않는다
+%btn {
+  padding: 10px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+}
+
+.btn-1 {
+  @extend %btn;
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-2 {
+  @extend %btn;
+  border: 1px solid blue;
+  color: blue;
+  font-weight: bold;
+}
+
+```
+
+**변환되서 보이는 실제 css**
+```css
+.btn-2, .btn-1 {
+  padding: 10px;
+  cursor: pointer;
+  background-color: inherit;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+}
+
+.btn-1 {
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-2 {
+  border: 1px solid blue;
+  color: blue;
+  font-weight: bold;
+}
+```
