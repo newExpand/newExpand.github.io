@@ -1,0 +1,87 @@
+---
+layout: post
+title: SCSS 내장되어 있는 색관련 함수
+date: 2023-01-10 11:29:23 +0900
+category: SCSS
+---
+# CSS
+## SCSS 내장되어 있는 색관련 함수
+
+* **darken : 어둡게**
+* **lighten: 밝게**
+* **saturate: 더 선명하게(높은 채도)**
+* **desaturate: 더 흐리게(낮은 채도)**
+* **adjust-hue: 명도 변경**
+* **rgba: alpha값 변경**
+
+예시
+
+```html
+<!-- html -->
+    <div class="container">
+        <div>
+            <p>예시1</p>
+        </div>
+        <div>
+            <p>예시2</p>
+        </div>
+        <div>
+            <p>예시3</p>
+        </div>
+        <div>
+            <p>예시4</p>
+        </div>
+        <div>
+            <p>예시5</p>
+        </div>
+        <div>
+            <p>예시6</p>
+        </div>
+        <div>
+            <p>예시7</p>
+        </div>
+    </div>
+```
+
+```scss
+// scss
+.container {
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background-color: $color;
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+
+        &:nth-of-type(1) {
+            // 기본
+        }
+        &:nth-of-type(2) {
+            // darken : 어둡게
+            background-color: darken($color, 20%);
+        }
+        &:nth-of-type(3) {
+            // lighten: 밝게
+            background-color: lighten($color, 20%);
+        }
+        &:nth-of-type(4) {
+            // saturate: 더 선명하게(높은 채도)
+            background-color: saturate($color, 20%);
+        }
+        &:nth-of-type(5) {
+            // desaturate: 더 흐리게(낮은 채도)
+            background-color: desaturate($color, 20%);
+        }
+        &:nth-of-type(6) {
+            // adjust-hue: 명도 변경
+            background-color: adjust-hue($color, 60deg);
+        }
+        &:nth-of-type(7) {
+            // rgba: alpha값 변경
+            background-color: rgba($color, 0.2);
+        }
+    }
+}
+```
