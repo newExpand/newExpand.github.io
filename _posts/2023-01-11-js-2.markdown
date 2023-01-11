@@ -1,0 +1,53 @@
+---
+layout: post
+title: javascript 함수에서 알아둬야 하는 특수 문법
+date: 2023-01-11 18:01:40 +0900
+category: JS
+---
+
+# JS
+
+## 함수에서 알아둬야 하는 특수 문법
+
+### **화살표함수 (= Arrow function)**
+
+: ES6 에서 소개된 신 기능, 함수를 function 키워드 없이 표현 가능
+
+```js
+let sampleFunc = (a, b) => {
+  return a + b;
+};
+```
+
+### **나머지 입력값 (= Rest parameters)**
+
+: 함수에서 입력값을 무제한으로 받을 수 있는 경우, 모든 인자값을 표현하기 위해 사용
+
+```js
+let sampleFunc = function (p1, p2, ...args) {
+  console.log(args);
+};
+sampleFunc(1, 2, 3, 4, 5); // [3, 4, 5]
+```
+
+### **입력값의 기본값 (= Default parameter)**
+
+: 특정 위치의 parameter 미입력 시, 자동으로 기본값을 지정하는 방법 (지정 안하면 undefined)
+
+```js
+let sampleFunc = function (a, b = 1) {
+  return console.log(a + b);
+};
+sampleFunc(5); //6
+```
+
+### **예약어 arguments**
+
+: 함수 입력값을 Array 형태로 가지고 있는 것.<mark>**(※화살표 함수에서는 사용불가)**</mark>
+
+```js
+let sampleFunc = function (a, b, c) {
+  console.log(arguments);
+};
+sampleFunc(1, 2, 3); // [1, 2, 3]
+```
