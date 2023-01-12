@@ -1,0 +1,86 @@
+---
+layout: post
+title: 예제로 알아보는 JS 비동기
+date: 2023-01-12 12:24:40 +0900
+category: JS
+---
+
+# 예제로 알아보는 JS 비동기
+
+## **콜백함수**
+
+```js
+const A1 = () =>
+  new Promise((resolve, reject) => {
+    const a = "A 함수 실행 후 생기는 데이터";
+    console.log("A 함수 실행!");
+
+    resolve(a);
+  });
+
+const B1 = (a) => {
+  console.log(`${a}를 이용하는 B`);
+};
+
+A(B);
+/*
+console결과값
+: A 함수 실행!
+: A 함수 실행 후 생기는 데이터를 이용하는 B
+*/
+```
+
+## **Promise**
+
+```js
+const A2 = () =>
+  new Promise((resolve, reject) => {
+    const a = "A 함수 실행 후 생기는 데이터";
+    resolve(a);
+  });
+
+const B2 = (a) => {
+  console.log(`${a}를 이용하는 B`);
+};
+
+A2()
+  .then((a) => {
+    console.log("A2 실행 성공!");
+    B2(a);
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
+
+/*
+console결과값
+: A2 함수 실행 성공!
+: A 함수 실행 후 생기는 데이터를 이용하는 B
+*/
+```
+
+## **async/await**
+
+```js
+const A3 = async () => {
+  const a = "A 함수 실행 후 생기는 데이터";
+  return a;
+};
+
+const B3 = (a) => {
+  console.log(`${a}를 이용하는 B`);
+};
+
+const func = async () => {
+  const a = await A3();
+  console.log("A3 실행 성공!");
+  B3(a);
+};
+
+func();
+/*
+console결과값
+: A3 함수 실행 성공!
+: A 함수 실행 후 생기는 데이터를 이용하는 B
+*/
+```
