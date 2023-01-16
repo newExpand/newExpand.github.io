@@ -1,0 +1,35 @@
+---
+layout: post
+title: Deep Copy 예제
+date: 2023-01-16 20:14:40 +0900
+category: JS
+---
+
+# 예제로 객체 복사(Deep Copy)
+
+## 예제
+
+```js
+let user = {
+  name: "Sweet Rain",
+  age: 23,
+  sizes: { height: 163, weight: 52 },
+};
+
+function deepCopy(obj) {
+  let result = {};
+  for (let key in obj) {
+    if (typeof obj[key] === "object") result[key] = deepCopy(obj[key]);
+    else result[key] = obj[key];
+  }
+  return result;
+}
+
+let admin = deepCopy(user);
+
+admin.sizes.weight++;
+
+console.log(admin.sizes.weight); // 결과값: 53
+console.log(user.sizes.weight); // 결과값: 52
+
+```
